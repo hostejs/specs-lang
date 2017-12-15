@@ -1,4 +1,12 @@
 var progdb;
+var request = new XMLHttpRequest();
+request.open('GET', 'hello_world.sp');
+request.responseType = 'text'; //this is actually a default value
+request.onload = function() {
+  document.body.innerText = request.response;
+};
+request.send();
+
 function DBErrorHandler(ex) {
     alert("DB Error: " + ex);
 }
